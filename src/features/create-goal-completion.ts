@@ -1,16 +1,13 @@
 import { and, count, eq, gte, lte, sql } from "drizzle-orm"
 import { db } from "../db"
 import { goalCompletions, goals } from "../db/schema"
-import dayjs from "dayjs"
+import { firstDayOfWeek, lastDayOfWeek } from "./common/date"
 
 interface CreateGoalCompletionRequest {
   goalId: string
 }
 
 export async function createGoalCompletion({ goalId }: CreateGoalCompletionRequest) {
-  const firstDayOfWeek = dayjs().startOf('week').toDate()
-  const lastDayOfWeek = dayjs().endOf('week').toDate()
-
   const goalCompletionCounts = db.$with('goal_completion_counts').as(
     db
       .select({
