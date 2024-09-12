@@ -1,5 +1,4 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "biomejs.biome",
-	"typescript.suggest.autoImports": true
+	"editor.defaultFormatter": "biomejs.biome"
 }

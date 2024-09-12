@@ -9,7 +9,7 @@ export const createGoalCompletionRoute: FastifyPluginAsyncZod = async app => {
         goalId: z.string(),
       })
     }
-  }, async (request, reply) => {
+  }, async (request, _reply) => {
 
     const { goalId } = request.body
 
